@@ -136,8 +136,102 @@
       "settings": {
         "java_home": "C:/Program Files/Java/jdk-26.0.2.1",
         "lombok_support": true,
-      },
+        "java": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all"
+            }
+          }
+        }
+      }
     },
+    "pyright": {
+      "initialization_options": {
+        "analysis": {
+          "inlayHints": {
+            "variableTypes": true,
+            "callArgumentNames": true,
+            "functionReturnTypes": true
+          }
+        }
+      }
+    },
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all"
+            },
+            "parameterTypes": {
+              "enabled": true
+            },
+            "variableTypes": {
+              "enabled": true
+            },
+            "propertyDeclarationTypes": {
+              "enabled": true
+            },
+            "functionLikeReturnTypes": {
+              "enabled": true
+            },
+            "enumMemberValues": {
+              "enabled": true
+            }
+          }
+        },
+        "javascript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all"
+            },
+            "parameterTypes": {
+              "enabled": true
+            },
+            "variableTypes": {
+              "enabled": true
+            },
+            "propertyDeclarationTypes": {
+              "enabled": true
+            },
+            "functionLikeReturnTypes": {
+              "enabled": true
+            },
+            "enumMemberValues": {
+              "enabled": true
+            }
+          }
+        }
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "inlayHints": {
+          "typeHints": {
+            "enable": true
+          },
+          "parameterHints": {
+            "enable": true
+          },
+          "chainingHints": {
+            "enable": true
+          }
+        }
+      }
+    },
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    }
   },
   "title_bar": {
     "show_menus": true,
