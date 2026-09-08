@@ -17,7 +17,7 @@ Works on both Windows and Ubuntu / Debian environments.
 
 2. Clone this repository and run the installer:
    ```bash
-   git clone <repo-url> zed-config
+   git clone https://github.com/abirwalker/zed-config.git
    cd zed-config
    chmod +x ./install.sh
    ./install.sh
@@ -27,8 +27,10 @@ The script backs up any existing `~/.config/zed` directory and copies the Linux-
 
 ### Windows
 
-Run the PowerShell installer:
+Clone the repository and run the PowerShell installer:
 ```powershell
+git clone https://github.com/abirwalker/zed-config.git
+cd zed-config
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
