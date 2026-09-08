@@ -1,0 +1,19 @@
+{
+  "C++ Fast IO Boilerplate": {
+    "prefix": "cpp",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "    ios_base::sync_with_stdio(false);",
+      "    cin.tie(NULL);",
+      "",
+      "    $0",
+      "",
+      "    return 0;",
+      "}"
+    ],
+    "description": "bits/stdc++.h with fast I/O boilerplate"
+  }
+}

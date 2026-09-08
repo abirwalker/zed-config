@@ -1,0 +1,16 @@
+[
+  {
+    "adapter": "Java",
+    "request": "launch",
+    "label": "Debug Java (Launch)",
+    "stopOnEntry": false,
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "adapter": "Java",
+    "request": "attach",
+    "label": "Debug Java (Attach 5005)",
+    "hostName": "localhost",
+    "port": 5005
+  }
+]

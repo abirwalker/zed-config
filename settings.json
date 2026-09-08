@@ -1,0 +1,166 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_family": ".ZedMono",
+  "disable_ai": false,
+  "show_edit_predictions": true,
+  "diff_view_style": "split",
+  "vim": {
+    "default_mode": "insert"
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "cli_default_open_behavior": "existing_window",
+  "edit_predictions": {
+    "ollama": {
+      "api_url": "http://localhost:11434"
+    },
+    "open_ai_compatible_api": {
+      "model": "",
+      "api_url": ""
+    },
+    "provider": "zed",
+    "allow_data_collection": "no",
+    "mode": "subtle",
+  },
+  "mouse_wheel_zoom": true,
+  "git_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "proxy": "",
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "sandbox_permissions": {
+      "allow_unsandboxed": true
+    },
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-5",
+      "enable_thinking": false
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.2:free",
+      "enable_thinking": true,
+    },
+    "dock": "right",
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "terminal": {
+    "font_size": 18.0,
+  },
+  "which_key": {
+    "enabled": true,
+  },
+  "autosave": "off",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Colored Zed Icons Theme Dark",
+    "dark": "VSCode Icons",
+  },
+  "vim_mode": true,
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Everforest Dark Hard (blur)",
+  },
+  "languages": {
+    "C++": {
+      "format_on_save": "on",
+    },
+    "Python": {
+      "format_on_save": "on",
+      "language_servers": ["basedpyright", "ruff"],
+    },
+    "Java": {
+      "format_on_save": "on",
+    },
+  },
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "arguments": [
+          "--query-driver=C:/msys64/ucrt64/bin/*",
+          "--header-insertion=never",
+        ],
+      },
+      "initialization_options": {
+        "clangd": {
+          "InlayHints": {
+            "Designators": true,
+            "Enabled": true,
+            "ParameterNames": true,
+            "DeducedTypes": true,
+          },
+        },
+      },
+    },
+
+    "basedpyright": {
+      "initialization_options": {
+        "analysis": {
+          "inlayHints": {
+            "variableTypes": true,
+            "callArgumentNames": true,
+            "functionReturnTypes": true,
+          },
+        },
+      },
+    },
+
+    "jdtls": {
+      "settings": {
+        "java_home": "C:/Program Files/Java/jdk-26.0.2.1",
+        "lombok_support": true,
+      },
+    },
+  },
+  "title_bar": {
+    "show_menus": true,
+  },
+  // 1. Always show errors and warnings directly on the line of code
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+
+  // 2. Automatically show function parameters while typing
+  "auto_signature_help": true,
+  "show_signature_help_after_edits": true,
+
+  // 3. Always display the visual code map on the right side of the screen
+  "minimap": {
+    "show": "always",
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+  },
+}

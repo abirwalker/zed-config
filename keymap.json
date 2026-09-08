@@ -1,0 +1,44 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-b": "project_panel::Toggle",
+      "ctrl-shift-f": "pane::DeploySearch",
+      "f5": "task::Spawn",
+      "ctrl-f5": ["task::Spawn", { "task_name": "Run Java File" }],
+      "shift-f5": "debugger::Start"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-s": "workspace::Save",
+      "alt-e": "editor::ToggleEditPrediction"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space r": "task::Spawn",
+      "space j": ["task::Spawn", { "task_name": "Run Java File" }],
+      "space p": ["task::Spawn", { "task_name": "Run Python File" }],
+      "space c": ["task::Spawn", { "task_name": "C++: Compile & Run Active File" }],
+      "space b": ["task::Spawn", { "task_name": "Generate Boilerplate" }],
+      "space d": "debugger::Start",
+      "space .": "editor::ToggleCodeActions"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction"
+    }
+  }
+]

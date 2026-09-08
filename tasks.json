@@ -1,0 +1,38 @@
+[
+  {
+    "label": "C++: Compile & Run Active File",
+    "command": "g++ -std=c++23 \"$ZED_FILE\" -o \"$ZED_DIRNAME\\$ZED_STEM.exe\"; if ($?) { & \"$ZED_DIRNAME\\$ZED_STEM.exe\" }",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true,
+  },
+  {
+    "label": "Run Python File",
+    "command": "python",
+    "args": ["${ZED_FILE}"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+  },
+  {
+    "label": "Run Java File",
+    "command": "java",
+    "args": ["${ZED_FILE}"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+  },
+  {
+    "label": "Java: Compile & Run Active File",
+    "command": "javac -encoding UTF-8 \"$ZED_FILE\" -d \"$ZED_DIRNAME\"; if ($?) { java -cp \"$ZED_DIRNAME\" \"$ZED_STEM\" }",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+  },
+  {
+    "label": "Generate Boilerplate",
+    "command": "$ext = [System.IO.Path]::GetExtension(\"$ZED_FILE\").ToLower(); $txt = (Get-Content \"$ZED_FILE\" -Raw -ErrorAction SilentlyContinue); if ([string]::IsNullOrWhiteSpace($txt)) { if ($ext -eq \".java\") { $c = \"import java.util.Scanner;`n`npublic class $ZED_STEM {`n    public static void main(String[] args) {`n        `n    }`n}\" } elseif ($ext -in \".cpp\", \".cc\", \".cxx\") { $c = \"#include <bits/stdc++.h>`nusing namespace std;`n`nint main() {`n    ios_base::sync_with_stdio(false);`n    cin.tie(NULL);`n`n    `n`n    return 0;`n}\" } elseif ($ext -eq \".py\") { $c = \"def main():`n    pass`n`nif __name__ == '__main__':`n    main()`n\" } if ($c) { [System.IO.File]::WriteAllText(\"$ZED_FILE\", $c, [System.Text.UTF8Encoding]::new($false)) } }",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "never",
+  },
+]
