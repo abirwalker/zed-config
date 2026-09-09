@@ -15,22 +15,14 @@
   },
   {
     "label": "Run Java File",
-    "command": "java",
-    "args": ["${ZED_FILE}"],
-    "use_new_terminal": false,
-    "allow_concurrent_runs": false,
-    "reveal": "always"
-  },
-  {
-    "label": "Java: Compile & Run Active File",
-    "command": "javac -encoding UTF-8 \"$ZED_FILE\" -d \"$ZED_DIRNAME\" && java -cp \"$ZED_DIRNAME\" \"$ZED_STEM\"",
+    "command": "v=$(java -version 2>&1 | sed -n 's/.*version \"\\([0-9]*\\).*/\\1/p'); if [ \"$v\" = \"1\" ] || [ -z \"$v\" ] || [ \"$v\" -lt 11 ] 2>/dev/null; then javac -encoding UTF-8 \"$ZED_FILE\" -d \"$ZED_DIRNAME\" && java -cp \"$ZED_DIRNAME\" \"$ZED_STEM\"; else java \"$ZED_FILE\"; fi",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always"
   },
   {
     "label": "Generate Boilerplate",
-    "command": "ext=\"${ZED_FILE##*.}\"; if [ ! -s \"$ZED_FILE\" ]; then if [ \"$ext\" = \"java\" ]; then printf 'import java.util.Scanner;\\n\\npublic class %s {\\n    public static void main(String[] args) {\\n        \\n    }\\n}\\n' \"$ZED_STEM\" > \"$ZED_FILE\"; elif [ \"$ext\" = \"cpp\" ] || [ \"$ext\" = \"cc\" ]; then printf '#include <bits/stdc++.h>\\nusing namespace std;\\n\\nint main() {\\n    ios_base::sync_with_stdio(false);\\n    cin.tie(NULL);\\n\\n    \\n\\n    return 0;\\n}\\n' > \"$ZED_FILE\"; elif [ \"$ext\" = \"py\" ]; then printf 'def main():\\n    pass\\n\\nif __name__ == \"__main__\":\\n    main()\\n' > \"$ZED_FILE\"; fi; fi",
+    "command": "file=\"$ZED_FILE\"; ext=\"${file##*.}\"; if [ ! -s \"$file\" ]; then if [ \"$ext\" = \"java\" ]; then printf 'import java.util.Scanner;\\n\\npublic class %s {\\n    public static void main(String[] args) {\\n        \\n    }\\n}\\n' \"$ZED_STEM\" > \"$file\"; elif [ \"$ext\" = \"cpp\" ] || [ \"$ext\" = \"cc\" ]; then printf '#include <bits/stdc++.h>\\nusing namespace std;\\n\\nint main() {\\n    ios_base::sync_with_stdio(false);\\n    cin.tie(NULL);\\n\\n    \\n\\n    return 0;\\n}\\n' > \"$file\"; elif [ \"$ext\" = \"py\" ]; then printf 'def main():\\n    pass\\n\\nif __name__ == \"__main__\":\\n    main()\\n' > \"$file\"; fi; fi",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "never"

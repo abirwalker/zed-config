@@ -18,21 +18,5 @@
       "Scanner input = new Scanner(System.in);$0"
     ],
     "description": "Scanner input = new Scanner(System.in);"
-  },
-  "Main Method": {
-    "prefix": "main",
-    "body": [
-      "public static void main(String[] args) {",
-      "    $0",
-      "}"
-    ],
-    "description": "public static void main(String[] args)"
-  },
-  "System.out.println": {
-    "prefix": "sout",
-    "body": [
-      "System.out.println($1);$0"
-    ],
-    "description": "System.out.println();"
   }
 }

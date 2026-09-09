@@ -5,3 +5,7 @@ Thumbs.db
 # Ignore backups
 *_backup_*
 *.bak
+
+# Ignore compiled binaries and artifacts
+*.class
+*.exe

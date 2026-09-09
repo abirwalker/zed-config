@@ -45,7 +45,7 @@ The script creates a backup of `%APPDATA%\Zed` before installing configuration f
 | Shortcut | Command | Function |
 | :--- | :--- | :--- |
 | `Space b` | `task::Spawn` | Insert boilerplate matching active file type (Java / C++ / Python) |
-| `Space j` | `task::Spawn` | Run active Java file (`java "$ZED_FILE"`) |
+| `Space j` | `task::Spawn` | Run active Java file (`java` on Windows, `javac` + `java` on Linux) |
 | `Space c` | `task::Spawn` | Compile and run C++ file (`g++`) |
 | `Space p` | `task::Spawn` | Run active Python file (`python3` on Linux, `python` on Windows) |
 | `Space d` | `debugger::Start` | Open DAP debug session |
@@ -72,8 +72,6 @@ The script creates a backup of `%APPDATA%\Zed` before installing configuration f
 
 - `java` + `Tab`: Class structure with `import java.util.Scanner;`. Cursor lands on class name, next `Tab` enters `main`.
 - `input` + `Tab`: `Scanner input = new Scanner(System.in);`
-- `sout` + `Tab`: `System.out.println();`
-- `main` + `Tab`: `public static void main(String[] args) { }`
 
 ### C++
 
