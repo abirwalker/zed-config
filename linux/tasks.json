@@ -24,7 +24,7 @@
   },
   {
     "label": "Rust: Compile & Run Active File",
-    "command": "if [ -f \"Cargo.toml\" ]; then if [ \"$ZED_STEM\" = \"main\" ]; then cargo run; else cargo run --bin \"$ZED_STEM\"; fi; else rustc \"$ZED_FILE\" -o \"$ZED_DIRNAME/$ZED_STEM\" && \"$ZED_DIRNAME/$ZED_STEM\"; fi",
+    "command": "if [ -f \"Cargo.toml\" ]; then if [ \"$ZED_STEM\" = \"main\" ]; then cargo run; else cargo run --bin \"$ZED_STEM\" 2>/dev/null || (rustc \"$ZED_FILE\" -o \"$ZED_DIRNAME/$ZED_STEM\" && \"$ZED_DIRNAME/$ZED_STEM\"); fi; else rustc \"$ZED_FILE\" -o \"$ZED_DIRNAME/$ZED_STEM\" && \"$ZED_DIRNAME/$ZED_STEM\"; fi",
     "use_new_terminal": false,
     "allow_concurrent_runs": true
   },
