@@ -8,7 +8,9 @@
   {
     "label": "Run Python File",
     "command": "python",
-    "args": ["${ZED_FILE}"],
+    "args": [
+      "${ZED_FILE}"
+    ],
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always"
@@ -16,7 +18,9 @@
   {
     "label": "Run Java File",
     "command": "java",
-    "args": ["${ZED_FILE}"],
+    "args": [
+      "${ZED_FILE}"
+    ],
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always"
