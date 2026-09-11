@@ -34,7 +34,7 @@
   },
   {
     "label": "Rust: Compile & Run Active File",
-    "command": "if (Test-Path 'Cargo.toml') { cargo run } else { rustc \"$ZED_FILE\" -o \"$ZED_DIRNAME\\$ZED_STEM.exe\"; if ($?) { & \"$ZED_DIRNAME\\$ZED_STEM.exe\" } }",
+    "command": "if (Test-Path 'Cargo.toml') { if ($ZED_STEM -eq 'main') { cargo run } else { cargo run --bin $ZED_STEM } } else { rustc \"$ZED_FILE\" -o \"$ZED_DIRNAME\\$ZED_STEM.exe\"; if ($?) { & \"$ZED_DIRNAME\\$ZED_STEM.exe\" } }",
     "use_new_terminal": false,
     "allow_concurrent_runs": true
   },
