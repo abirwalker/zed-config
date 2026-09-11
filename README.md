@@ -1,6 +1,6 @@
 # Zed Configuration Backup
 
-Personal configuration for the [Zed](https://zed.dev) code editor. Includes Vim keybindings, compile and run tasks for Java, C++, and Python, boilerplate generators, and language server settings.
+Personal configuration for the [Zed](https://zed.dev) code editor. Includes Vim keybindings, compile and run tasks for Rust, Java, C++, and Python, boilerplate generators, and language server settings.
 
 Works on both Windows and Ubuntu / Debian environments.
 
@@ -44,12 +44,13 @@ The script creates a backup of `%APPDATA%\Zed` before installing configuration f
 
 | Shortcut | Command | Function |
 | :--- | :--- | :--- |
-| `Space b` | `task::Spawn` | Insert boilerplate matching active file type (Java / C++ / Python) |
+| `Space b` | `task::Spawn` | Insert boilerplate matching active file type (Rust / Java / C++ / Python) |
+| `Space r` | `task::Spawn` | Compile and run active Rust file (`cargo run` if `Cargo.toml`, else `rustc`) |
 | `Space j` | `task::Spawn` | Run active Java file (`java` on Windows, `javac` + `java` on Linux) |
 | `Space c` | `task::Spawn` | Compile and run C++ file (`g++`) |
 | `Space p` | `task::Spawn` | Run active Python file (`python3` on Linux, `python` on Windows) |
+| `Space t` | `task::Spawn` | Open tasks modal |
 | `Space d` | `debugger::Start` | Open DAP debug session |
-| `Space r` | `task::Spawn` | Open tasks modal |
 | `Space .` | `editor::ToggleCodeActions` | Show code actions (quick-fix / auto-import) |
 
 ### Global and Insert Mode
@@ -106,6 +107,14 @@ public class Calculator {
     public static void main(String[] args) {
         
     }
+}
+```
+
+### Rust (`.rs`)
+
+```rust
+fn main() {
+    println!("Hello, world!");
 }
 ```
 

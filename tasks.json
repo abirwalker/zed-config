@@ -29,8 +29,14 @@
     "reveal": "always"
   },
   {
+    "label": "Rust: Compile & Run Active File",
+    "command": "if (Test-Path 'Cargo.toml') { cargo run } else { rustc \"$ZED_FILE\" -o \"$ZED_DIRNAME\\$ZED_STEM.exe\"; if ($?) { & \"$ZED_DIRNAME\\$ZED_STEM.exe\" } }",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
     "label": "Generate Boilerplate",
-    "command": "$ext = [System.IO.Path]::GetExtension(\"$ZED_FILE\").ToLower(); $txt = (Get-Content \"$ZED_FILE\" -Raw -ErrorAction SilentlyContinue); if ([string]::IsNullOrWhiteSpace($txt)) { if ($ext -eq \".java\") { $c = \"import java.util.Scanner;`n`npublic class $ZED_STEM {`n    public static void main(String[] args) {`n        `n    }`n}\" } elseif ($ext -in \".cpp\", \".cc\", \".cxx\") { $c = \"#include <bits/stdc++.h>`nusing namespace std;`n`nint main() {`n    ios_base::sync_with_stdio(false);`n    cin.tie(NULL);`n`n    `n`n    return 0;`n}\" } elseif ($ext -eq \".py\") { $c = \"def main():`n    pass`n`nif __name__ == '__main__':`n    main()`n\" } if ($c) { [System.IO.File]::WriteAllText(\"$ZED_FILE\", $c, [System.Text.UTF8Encoding]::new($false)) } }",
+    "command": "$ext = [System.IO.Path]::GetExtension(\"$ZED_FILE\").ToLower(); $txt = (Get-Content \"$ZED_FILE\" -Raw -ErrorAction SilentlyContinue); if ([string]::IsNullOrWhiteSpace($txt)) { if ($ext -eq \".java\") { $c = \"import java.util.Scanner;`n`npublic class $ZED_STEM {`n    public static void main(String[] args) {`n        `n    }`n}\" } elseif ($ext -in \".cpp\", \".cc\", \".cxx\") { $c = \"#include <bits/stdc++.h>`nusing namespace std;`n`nint main() {`n    ios_base::sync_with_stdio(false);`n    cin.tie(NULL);`n`n    `n`n    return 0;`n}\" } elseif ($ext -eq \".py\") { $c = \"def main():`n    pass`n`nif __name__ == '__main__':`n    main()`n\" } elseif ($ext -eq \".rs\") { $c = \"fn main() {`n    println!(`\"Hello, world!`\");`n}`n\" } if ($c) { [System.IO.File]::WriteAllText(\"$ZED_FILE\", $c, [System.Text.UTF8Encoding]::new($false)) } }",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "never"

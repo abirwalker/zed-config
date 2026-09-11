@@ -26,7 +26,8 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "space r": "task::Spawn",
+      "space r": ["task::Spawn", { "task_name": "Rust: Compile & Run Active File" }],
+      "space t": "task::Spawn",
       "space j": ["task::Spawn", { "task_name": "Run Java File" }],
       "space p": ["task::Spawn", { "task_name": "Run Python File" }],
       "space c": ["task::Spawn", { "task_name": "C++: Compile & Run Active File" }],
